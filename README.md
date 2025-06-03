@@ -71,7 +71,7 @@ netlify deploy
 1. Add homepage to package.json:
 ```json
 {
-  "homepage": "https://yourusername.github.io/osint-lab"
+  "homepage": "https://github.com/S2K7x/mindz"
 }
 ```
 
