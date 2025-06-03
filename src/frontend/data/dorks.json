@@ -1,0 +1,215 @@
+{
+  "categories": [
+    {
+      "category": "General Search Operators",
+      "operators": [
+        {
+          "operator": "site:",
+          "description": "Limits results to a specific website.",
+          "example": "site:linkedin.com",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "domain"
+        },
+        {
+          "operator": "inurl:",
+          "description": "Finds pages with the specified keyword in the URL.",
+          "example": "inurl:admin",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword"
+        },
+        {
+          "operator": "intitle:",
+          "description": "Finds pages with the specified keyword in the title.",
+          "example": "intitle:\"index of\"",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword"
+        }
+      ]
+    },
+    {
+      "category": "Content Specific",
+      "operators": [
+         {
+          "operator": "intext:",
+          "description": "Finds pages with the specified keyword in the text.",
+          "example": "intext:\"confidential information\"",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword"
+        },
+         {
+          "operator": "allintext:",
+          "description": "Finds pages with all specified keywords in the text.",
+          "example": "allintext:\"financial report 2023\"",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword"
+        },
+        {
+          "operator": "cache:",
+          "description": "Shows Google's cached version of a webpage.",
+          "example": "cache:example.com/sensitive-page.html",
+          "searchEngines": ["Google"],
+          "appliesTo": "url"
+        }
+      ]
+    },
+    {
+      "category": "File Type",
+      "operators": [
+        {
+          "operator": "filetype:",
+          "description": "Limits results to a specific file type.",
+          "example": "filetype:pdf",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword, file extension"
+        },
+         {
+          "operator": "ext:",
+          "description": "Synonym for filetype:.",
+          "example": "ext:log",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword, file extension"
+        }
+      ]
+    },
+     {
+      "category": "Relationship & Link Operators",
+      "operators": [
+         {
+          "operator": "related:",
+          "description": "Finds websites similar to a specified URL.",
+          "example": "related:nytimes.com",
+          "searchEngines": ["Google"],
+          "appliesTo": "url"
+        },
+         {
+          "operator": "link:",
+          "description": "Finds pages linking to a specific URL (less reliable now).",
+          "example": "link:example.com",
+          "searchEngines": ["Google", "Bing"],
+          "appliesTo": "url"
+        },
+         {
+          "operator": "inanchor:",
+          "description": "Finds pages linked with specific anchor text.",
+          "example": "inanchor:\"company login\"",
+          "searchEngines": ["Google"],
+          "appliesTo": "keyword"
+        },
+         {
+          "operator": "allinanchor:",
+          "description": "Finds pages linked with all specified anchor texts.",
+          "example": "allinanchor:\"private area\"",
+          "searchEngines": ["Google"],
+          "appliesTo": "keyword"
+        }
+      ]
+    },
+     {
+      "category": "Logical & Wildcard Operators",
+      "operators": [
+         {
+          "operator": "OR",
+          "description": "Finds results with either term.",
+          "example": "OSINT OR \"Open Source Intelligence\"",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword, phrase"
+        },
+         {
+          "operator": "|",
+          "description": "Synonym for OR.",
+          "example": "OSINT | \"Open Source Intelligence\"",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword, phrase"
+        },
+         {
+          "operator": "-",
+          "description": "Excludes results with the following term.",
+          "example": "apple -fruit",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword, phrase"
+        },
+         {
+          "operator": "*",
+          "description": "Matches any word or phrase.",
+          "example": "\"John * Doe\"",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "keyword, phrase"
+        },
+         {
+          "operator": "\"\"",
+          "description": "Searches for an exact phrase.",
+          "example": "\"cyber security\"",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "phrase"
+        },
+         {
+          "operator": "()",
+          "description": "Groups terms or operators.",
+          "example": "(site:example.com OR site:anothersite.org) filetype:pdf",
+          "searchEngines": ["Google", "Bing", "DuckDuckGo", "Yandex"],
+          "appliesTo": "combination"
+        }
+      ]
+    },
+     {
+      "category": "Advanced & Niche Operators",
+      "operators": [
+         {
+          "operator": "AROUND(X)",
+          "description": "Finds terms within X words of each other.",
+          "example": "\"password\" AROUND(5) \"reset\"",
+          "searchEngines": ["Google"],
+          "appliesTo": "keywords"
+        },
+         {
+          "operator": "before:",
+          "description": "Filters results published before a date (YYYY-MM-DD).",
+          "example": "OSINT before:2023-01-01",
+          "searchEngines": ["Google"],
+          "appliesTo": "date"
+        },
+         {
+          "operator": "after:",
+          "description": "Filters results published after a date (YYYY-MM-DD).",
+          "example": "OSINT after:2023-01-01",
+          "searchEngines": ["Google"],
+          "appliesTo": "date"
+        },
+         {
+          "operator": "define:",
+          "description": "Provides the definition of a word or phrase.",
+          "example": "define:phishing",
+          "searchEngines": ["Google"],
+          "appliesTo": "term, phrase"
+        },
+         {
+          "operator": "numrange:X-Y",
+          "description": "Finds numbers within a specified range.",
+          "example": "numrange:2000-2024 \"breach report\"",
+          "searchEngines": ["Google"],
+          "appliesTo": "numbers"
+        }
+      ]
+    }
+  ],
+  "commonDorks": [
+    {
+      "name": "Find Emails on a Domain",
+      "dork": "site:{domain} intext:@{domain} filetype:xls OR filetype:csv OR filetype:txt",
+      "description": "Finds email addresses listed on a specific website.",
+      "exampleTarget": "example.com"
+    },
+    {
+      "name": "Find Public Documents",
+      "dork": "site:{domain} filetype:pdf OR filetype:doc OR filetype:docx OR filetype:xls OR filetype:xlsx",
+      "description": "Locates publicly accessible documents on a website.",
+      "exampleTarget": "company.com"
+    },
+    {
+      "name": "Find Directory Listings",
+      "dork": "intitle:\"index of\" \"parent directory\" -html -htm -php -asp",
+      "description": "Searches for exposed directory listings.",
+       "exampleTarget": "example.com"
+    }
+  ]
+} 

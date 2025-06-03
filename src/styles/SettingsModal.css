@@ -1,0 +1,205 @@
+.settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Above everything else */
+}
+
+.settings-modal-content {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius-large);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh; /* Limit height and enable scrolling if content overflows */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0; /* Prevent header from shrinking when body scrolls */
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--placeholder-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-small);
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  color: var(--primary-color);
+  background-color: rgba(59, 130, 246, 0.1); /* Use primary color */
+}
+
+.modal-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-grow: 1; /* Allow body to take remaining space */
+}
+
+.setting-section {
+  /* border-bottom: 1px solid var(--border-color); */ /* Optional separator */
+  padding-bottom: 1rem;
+}
+
+.setting-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.setting-section h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.theme-options,
+.layout-options,
+.density-options,
+.font-size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.theme-options label,
+.layout-options label,
+.density-options label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.theme-options input[type="radio"],
+.layout-options input[type="radio"],
+.density-options input[type="radio"] {
+  margin-right: 0.5rem;
+  accent-color: var(--primary-color); /* Style radio button accent color */
+}
+
+.density-options {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.density-options h4 {
+  font-size: 0.95rem;
+  color: var(--placeholder-color);
+  margin: 0;
+}
+
+.font-size-options {
+  gap: 0.5rem;
+}
+
+.font-size-options label {
+   font-size: 1rem;
+   color: var(--text-color);
+   margin-right: 0.5rem;
+}
+
+.font-size-options input[type="range"] {
+  flex-grow: 1; /* Allow slider to take available space */
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--secondary-color);
+  border-radius: 5px;
+  height: 8px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.font-size-options input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.font-size-options input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.font-size-options span {
+  font-size: 1rem;
+  color: var(--text-color);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .settings-modal-content {
+    width: 95%;
+  }
+
+  .modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .close-button {
+    font-size: 1.3rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .setting-section h3 {
+    font-size: 1rem;
+  }
+
+  .theme-options,
+  .layout-options,
+  .density-options,
+  .font-size-options {
+    gap: 0.75rem;
+  }
+
+  .theme-options label,
+  .layout-options label,
+  .density-options label,
+  .font-size-options label,
+  .font-size-options span {
+    font-size: 0.9rem;
+  }
+} 

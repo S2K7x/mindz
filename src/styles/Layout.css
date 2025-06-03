@@ -1,0 +1,182 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  overflow: hidden; /* Prevent overall body scroll */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+}
+
+.layout-content {
+  display: grid;
+  grid-template-columns: 280px 1fr 300px; /* Default: Sidebar, Main, Right Panel */
+  grid-template-rows: 1fr;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+  height: calc(100% - 64px);
+}
+
+/* Sidebar Position: Right */
+.layout.sidebar-right .layout-content {
+  grid-template-columns: 1fr 280px 300px; /* Main, Sidebar, Right Panel */
+}
+
+/* Header styles */
+.header {
+  height: 64px;
+  background-color: var(--header-background); /* Use theme variable */
+  border-bottom: 1px solid var(--border-color); /* Use theme variable */
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: var(--sidebar-background); /* Use theme variable */
+  border-right: 1px solid var(--border-color); /* Use theme variable */
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  /* Grid placement handled by Layout component */
+}
+
+.sidebar.collapsed {
+  width: 64px; /* Collapsed width */
+  overflow-y: hidden;
+}
+
+/* Sidebar Position: Right specific styles */
+.layout.sidebar-right .sidebar {
+  grid-column: 2; /* Place sidebar in the second column */
+  grid-row: 1; /* Place in the first row */
+  border-right: none;
+  border-left: 1px solid var(--border-color); /* Add left border */
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  background-color: var(--background-color); /* Use theme variable */
+  position: relative;
+  min-height: 0;
+  /* Grid placement handled by Layout component */
+}
+
+/* Sidebar Position: Right specific styles for main content */
+.layout.sidebar-right .main-content {
+  grid-column: 1; /* Place main content in the first column */
+  grid-row: 1;
+}
+
+/* Right panel styles */
+.right-panel {
+  width: 300px;
+  background-color: var(--right-panel-background); /* Use theme variable */
+  border-left: 1px solid var(--border-color); /* Use theme variable */
+  flex-shrink: 0;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  /* Grid placement handled by Layout component */
+}
+
+.right-panel.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+/* Sidebar Position: Right specific styles for right panel */
+.layout.sidebar-right .right-panel {
+   grid-column: 3; /* Place right panel in the third column */
+   grid-row: 1;
+}
+
+/* Scrollbar styles for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color); /* Use theme variable */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569; /* Still use a consistent scrollbar thumb color */
+  border-radius: var(--border-radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* Still use a consistent scrollbar thumb color */
+}
+
+/* Responsive Adjustments (Grid changes for smaller screens) */
+@media (max-width: 992px) {
+  .layout-content {
+    display: flex; /* Revert to flex for stacking */
+    flex-direction: column; /* Stack sidebar, main, and right panel */
+    height: auto; /* Auto height when stacked */
+    overflow-y: auto; /* Enable scrolling for the stacked content */
+  }
+
+  .sidebar,
+  .main-content,
+  .right-panel {
+    width: 100%; /* Full width when stacked */
+    height: auto; /* Auto height */
+    /* Remove grid-specific styles when stacked */
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .main-content {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color); /* Use theme variable */
+  }
+
+  .right-panel {
+    border-left: none;
+    border-bottom: 1px solid var(--border-color); /* Use theme variable */
+  }
+
+  /* Ensure main content takes precedence in the flow */
+  .main-content {
+    order: 2; /* Place Main Content after Header and Sidebar */
+    /* overflow-y: auto; is handled by the stacked layout-content now */
+    /* Remove display: flex and flex-direction: column when stacked if they cause issues */
+    display: block;
+    flex-direction: unset;
+  }
+
+  .sidebar {
+    order: 1; /* Place sidebar before main content */
+  }
+
+  .right-panel {
+    order: 3; /* Place right panel after main content */
+  }
+
+  /* Reset sidebar collapsed width on small screens if needed */
+   .sidebar.collapsed {
+     width: 100%;
+     overflow-y: auto;
+   }
+
+   .right-panel.collapsed {
+     width: 100%;
+     overflow-y: auto;
+   }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+  }
+} 

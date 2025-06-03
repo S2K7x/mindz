@@ -1,0 +1,204 @@
+/* Styles for elements within the HomePage component (Main Content Area) */
+
+/* The .home-page class is used on the div that is also .main-content */
+.home-page {
+  /* .main-content in Layout.css handles padding, background, and its own scrolling properties */
+  /* This div is also a flex container now (via .main-content) */
+}
+
+/* New wrapper div to ensure scrolling */
+.main-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+.homepage {
+  padding: var(--spacing-lg);
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  flex: 1;
+  overflow-y: auto;
+}
+
+.target-form {
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.target-form input[type="text"] {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--input-border); /* Use theme variable */
+  border-radius: var(--border-radius-md);
+  background-color: var(--input-background); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  font-size: 1rem;
+}
+
+.target-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Use theme variable */
+  box-shadow: 0 0 0 0.1rem rgba(59, 130, 246, 0.2); /* Subtle focus ring */
+}
+
+.target-form input[type="text"]::placeholder {
+  color: var(--placeholder-color); /* Use theme variable */
+}
+
+.section-title {
+  font-size: 1.25rem;
+  color: var(--text-color); /* Use theme variable */
+  margin-bottom: var(--spacing-md);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Default Tool Card Styles */
+.tool-card {
+  background-color: var(--card-background); /* Use theme variable */
+  border: 1px solid var(--border-color); /* Use theme variable */
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color); /* Use theme variable */
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tool-card p {
+  font-size: 0.9rem;
+  color: var(--placeholder-color); /* Use theme variable */
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+/* Compact Tool Card Styles */
+.tool-card.compact {
+  padding: var(--spacing-sm);
+}
+
+.tool-card.compact h3 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.tool-card.compact p {
+  font-size: 0.8rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card .tool-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+.tool-card .action-button {
+  background-color: var(--button-background); /* Use theme variable */
+  color: var(--button-text-color); /* Use theme variable */
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.tool-card .action-button:hover {
+  background-color: var(--button-hover-background); /* Use theme variable */
+}
+
+.tool-card .action-button:disabled {
+  background-color: var(--secondary-color); /* Use theme variable */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.search-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.search-section .action-button {
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.search-section .action-button:hover {
+  background-color: var(--button-hover-background);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .homepage {
+    padding: var(--spacing-md);
+  }
+
+  .target-form {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card {
+    padding: var(--spacing-md);
+  }
+
+  .tool-card h3 {
+    font-size: 1rem;
+  }
+
+  .tool-card p {
+    font-size: 0.85rem;
+  }
+
+  .tool-card .action-button {
+    font-size: 0.8rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  /* Responsive compact adjustments */
+  .tool-card.compact {
+    padding: var(--spacing-xs);
+  }
+
+  .tool-card.compact h3 {
+    font-size: 0.9rem;
+  }
+
+  .tool-card.compact p {
+    font-size: 0.75rem;
+  }
+} 

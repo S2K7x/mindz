@@ -1,0 +1,121 @@
+/* Styles for the ToolCard component */
+
+.tool-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out content vertically */
+  height: 100%; /* Make cards in a row the same height */
+}
+
+.tool-card:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  border-color: #3b82f6; /* Accent border on hover */
+}
+
+.tool-name {
+  font-size: 1.125rem; /* Larger font size for name */
+  font-weight: 600;
+  color: #e2e8f0; /* Light text color */
+  margin-bottom: 0.75rem; /* Space below name */
+}
+
+.tool-description {
+  font-size: 0.875rem; /* Smaller font size for description */
+  color: #94a3b8; /* Muted text color */
+  margin-bottom: 1.5rem; /* Space below description */
+  flex-grow: 1; /* Allow description to take available space */
+  line-height: 1.4; /* Improve readability */
+}
+
+.tool-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  align-items: center; /* Align buttons vertically */
+}
+
+.tool-link,
+.preview-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem; /* Padding for buttons */
+  border-radius: 8px; /* Rounded corners for buttons */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.875rem;
+  text-align: center;
+  text-decoration: none; /* Remove underline from link */
+}
+
+.tool-link {
+  background-color: #3b82f6; /* Accent color for primary action */
+  color: white; /* White text */
+  border: none;
+}
+
+.tool-link:hover {
+  background-color: #2563eb; /* Darker accent on hover */
+}
+
+.preview-button {
+  background-color: #475569; /* Muted background for secondary action */
+  color: #e2e8f0; /* Light text */
+  border: 1px solid #475569; /* Border matches background */
+}
+
+.preview-button:hover {
+  background-color: #64748b; /* Lighter muted background on hover */
+  border-color: #64748b; /* Border matches hover background */
+}
+
+.add-to-board-button {
+  padding: 8px 12px;
+  background-color: var(--secondary-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
+}
+
+.add-to-board-button:hover {
+  background-color: var(--secondary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .tool-card {
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .tool-name {
+    font-size: 1rem; /* Reduced font size */
+  }
+
+  .tool-description {
+    font-size: 0.8rem; /* Reduced font size */
+    margin-bottom: 1rem; /* Reduced space below description */
+  }
+
+  .tool-actions {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0.5rem; /* Reduced gap */
+  }
+
+  .tool-link,
+  .preview-button {
+    width: 100%; /* Full width buttons */
+    text-align: center; /* Center text */
+    padding: 0.6rem 1rem; /* Adjusted padding */
+    font-size: 0.875rem; /* Adjusted font size */
+  }
+} 

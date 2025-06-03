@@ -1,0 +1,256 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  background-color: var(--sidebar-background); /* Use theme variable */
+  border-right: 1px solid var(--border-color); /* Use theme variable */
+  flex-shrink: 0; /* Prevent shrinking */
+  overflow-y: auto; /* Enable scrolling for sidebar content */
+  transition: width 0.3s ease; /* Smooth collapse transition */
+}
+
+.sidebar.collapsed {
+  width: 64px; /* Collapsed width */
+}
+
+.sidebar-header {
+  padding: 1rem; /* Standard padding */
+  border-bottom: 1px solid var(--border-color); /* Use theme variable */
+  display: flex;
+  justify-content: flex-end; /* Align collapse button to the right */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.collapse-button {
+  background: none;
+  border: none;
+  color: var(--placeholder-color); /* Use theme variable */
+  cursor: pointer;
+  padding: 0.5rem; /* Smaller padding */
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.25rem; /* Icon size */
+}
+
+.collapse-button:hover {
+  background-color: rgba(59, 130, 246, 0.1); /* Use primary color for hover effect */
+  color: var(--primary-color); /* Use theme variable */
+}
+
+.sidebar-content {
+  flex: 1; /* Allow content to take available space */
+  overflow-y: auto; /* Enable scrolling for content if it overflows */
+  padding: 1.5rem;
+}
+
+.sidebar-section {
+  margin-bottom: 1.5rem; /* Space between sections */
+}
+
+.section-title {
+  font-size: 0.875rem; /* Smaller font size */
+  color: var(--placeholder-color); /* Use theme variable */
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-color); /* Use theme variable */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: left;
+  border-radius: 6px;
+}
+
+.category-button:hover {
+  background-color: var(--secondary-color); /* Use theme variable */
+}
+
+.category-button i {
+  transition: transform 0.2s ease-in-out;
+  color: var(--placeholder-color); /* Use theme variable */
+}
+
+.category-button.expanded i {
+  transform: rotate(90deg); /* Rotate icon when expanded */
+  color: var(--primary-color); /* Use theme variable */
+}
+
+/* Collapsed state adjustments */
+.sidebar.collapsed .section-title,
+.sidebar.collapsed .category-button span {
+  display: none; /* Hide text when collapsed */
+}
+
+/* Removed collapsed state adjustment for favorites button span */
+
+/* Responsive adjustments (matching Layout.css breakpoints) */
+@media (max-width: 992px) {
+  .sidebar {
+    /* Layout.css handles width and height when stacked */
+    border-right: none; /* Remove side border */
+    border-bottom: 1px solid var(--border-color); /* Use theme variable */
+    padding-bottom: 1.5rem; /* Add some padding at the bottom when stacked */
+  }
+
+  .sidebar-header {
+    padding: 0.75rem 1rem; /* Reduced padding */
+  }
+
+  .sidebar-content {
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .section-title {
+     font-size: 0.75rem; /* Slightly smaller title */
+  }
+
+  .favorites-button,
+  .category-button,
+  .new-case-button {
+    padding: 0.6rem 0.75rem; /* Adjusted padding */
+    font-size: 0.875rem; /* Adjusted font size */
+  }
+
+  .favorites-button i,
+  .category-button i {
+     font-size: 1rem; /* Adjusted icon size */
+  }
+
+  .active-case input {
+    font-size: 0.875rem; /* Adjusted font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-header {
+    padding: 0.5rem 0.75rem; /* Further reduced padding */
+  }
+
+  .sidebar-content {
+    padding: 0.75rem; /* Further reduced padding */
+  }
+
+   .section-title {
+     font-size: 0.7rem; /* Further reduced title size */
+  }
+
+  .favorites-button,
+  .category-button,
+  .new-case-button {
+    padding: 0.5rem 0.6rem; /* Further adjusted padding */
+    font-size: 0.8rem; /* Further adjusted font size */
+  }
+
+   .favorites-button i,
+  .category-button i {
+     font-size: 0.9rem; /* Further adjusted icon size */
+  }
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--input-border); /* Use theme variable */
+  border-radius: 4px;
+  background-color: var(--input-background); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Use theme variable */
+}
+
+.search-bar i {
+  color: var(--placeholder-color); /* Use theme variable */
+}
+
+.tool-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 1.5rem; /* Indent tool list */
+}
+
+.tool-list li {
+  margin-bottom: 0.25rem;
+}
+
+.tool-button {
+  background: none;
+  border: none;
+  color: var(--text-color); /* Use theme variable */
+  cursor: pointer;
+  padding: 0.25rem 0;
+  text-align: left;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.tool-button:hover {
+  color: var(--primary-color); /* Use theme variable */
+}
+
+.category-tools-section {
+  padding-left: 1.5rem; /* Indent the section */
+  border-left: 1px solid var(--border-color); /* Use theme variable */
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.tool-search-bar {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.tool-search-bar input {
+  flex: 1;
+  padding: 0.3rem;
+  border: 1px solid var(--input-border); /* Use theme variable */
+  border-radius: 4px;
+  background-color: var(--input-background); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.tool-search-bar input:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Use theme variable */
+}
+
+.tool-search-bar i {
+  color: var(--placeholder-color); /* Use theme variable */
+  font-size: 0.8rem;
+}
+
+.no-tools-found {
+  color: var(--placeholder-color); /* Use theme variable */
+  font-size: 0.875rem;
+  padding-left: 0.5rem;
+} 

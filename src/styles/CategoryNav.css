@@ -1,0 +1,62 @@
+.category-nav {
+  margin-bottom: 1.5rem; /* Consistent spacing below the nav */
+}
+
+.category-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Arrange categories in a row */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 0.5rem; /* Space between category buttons */
+}
+
+.category-nav li {
+  /* No specific styles needed for list items */
+}
+
+.category-nav button {
+  background-color: #1e293b; /* Button background */
+  border: 1px solid #334155; /* Subtle border */
+  border-radius: 6px; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Padding inside button */
+  color: #e2e8f0; /* Light text */
+  font-size: 0.875rem; /* Smaller font size */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-weight: 500;
+}
+
+.category-nav button:hover {
+  background-color: #334155; /* Darker background on hover */
+  border-color: #3b82f6; /* Accent border on hover */
+}
+
+.category-nav button.active {
+  background-color: #3b82f6; /* Accent color for active button */
+  border-color: #3b82f6; /* Accent border */
+  color: white; /* White text for active button */
+  font-weight: 600;
+}
+
+.category-nav button.active:hover {
+   background-color: #2563eb; /* Darker accent on hover for active */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .category-nav ul {
+    flex-direction: column;
+  }
+  
+  .category-nav li {
+    width: 100%;
+  }
+  
+  .category-nav button {
+    width: 100%;
+    text-align: left;
+  }
+} 

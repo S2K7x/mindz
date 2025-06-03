@@ -1,0 +1,79 @@
+/* Styles for the ToolTip component */
+
+.tooltip-container {
+  position: relative;
+  display: inline-block; /* Allows the container to wrap its content */
+}
+
+.tooltip-icon {
+  margin-left: 0.5rem; /* Space between the element and the icon */
+  color: #94a3b8; /* Muted icon color */
+  font-size: 0.875rem; /* Smaller icon size */
+  cursor: help; /* Indicate that it's providing help info */
+}
+
+.tooltip-box {
+  visibility: hidden;
+  opacity: 0;
+  width: 250px; /* Fixed width for the tooltip box */
+  background-color: #1e293b; /* Slightly lighter dark background */
+  color: #e2e8f0; /* Light text */
+  text-align: left;
+  border-radius: 8px; /* Rounded corners */
+  padding: 0.75rem 1rem; /* Padding inside the box */
+  position: absolute;
+  z-index: 1; /* Ensure tooltip is on top */
+  bottom: 125%; /* Position above the icon */
+  left: 50%;
+  margin-left: -125px; /* Center the tooltip below the icon */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: 1px solid #334155; /* Subtle border */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.tooltip-box::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Position the arrow below the tooltip box */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1e293b transparent transparent transparent; /* Arrow color matches background */
+}
+
+.tooltip-container:hover .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #3b82f6; /* Accent color for title */
+}
+
+.tooltip-content {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #b0b9c8; /* Slightly muted text for content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .tooltip-box {
+    width: 200px; /* Slightly smaller width */
+    left: 10px; /* Position from the left edge */
+    margin-left: 0; /* Remove left margin */
+    bottom: auto; /* Remove bottom positioning */
+    top: 125%; /* Position below the icon */
+  }
+
+  .tooltip-box::after {
+    left: 20px; /* Adjust arrow position */
+    margin-left: 0;
+    top: -5px; /* Position arrow above the box */
+    border-color: transparent transparent #1e293b transparent; /* Flip arrow direction */
+  }
+} 

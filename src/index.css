@@ -1,0 +1,173 @@
+/* Global Styles */
+:root {
+  /* Base Variables (used by themes) */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --base-font-size: 100%; /* Default base font size */
+
+  /* New Visual Settings Variables */
+  --spacing: 12px; /* Default spacing */
+  --border-radius: 4px; /* Default border radius */
+  --shadow-intensity: 50; /* Default shadow intensity (0-100) */
+
+  /* Pre-defined values using the new variables (optional, for convenience) */
+  --spacing-xs: calc(var(--spacing) * 0.25);
+  --spacing-sm: calc(var(--spacing) * 0.5);
+  --spacing-md: var(--spacing);
+  --spacing-lg: calc(var(--spacing) * 1.5);
+  --spacing-xl: calc(var(--spacing) * 2);
+
+  --border-radius-sm: calc(var(--border-radius) * 0.5);
+  --border-radius-md: var(--border-radius);
+  --border-radius-lg: calc(var(--border-radius) * 1.5);
+
+  /* Dark Mode Variables (Default) */
+  --background-color: #0f172a;
+  --text-color: #e2e8f0;
+  --primary-color: #3b82f6;
+  --secondary-color: #1e293b;
+  --border-color: #334155;
+  --card-background: #1e293b;
+  --input-background: #1e293b;
+  --input-border: #334155;
+  --placeholder-color: #94a3b8;
+  --button-background: #3b82f6;
+  --button-hover-background: #2563eb;
+  --button-text-color: white;
+  --sidebar-background: #1e293b;
+  --header-background: #1e293b;
+  --right-panel-background: #1e293b;
+  --error-color: #ef4444;
+  --error-background: rgba(239, 68, 68, 0.1);
+  --success-color: #10b981;
+  --success-background: rgba(16, 185, 129, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  overflow: hidden;
+  font-size: var(--base-font-size);
+}
+
+/* Light Mode Overrides */
+body.theme-light {
+  --background-color: #f1f5f9;
+  --text-color: #1e293b;
+  --primary-color: #2563eb;
+  --secondary-color: #cbd5e1;
+  --border-color: #94a3b8;
+  --card-background: #ffffff;
+  --input-background: #ffffff;
+  --input-border: #cbd5e1;
+  --placeholder-color: #64748b;
+  --button-background: #2563eb;
+  --button-hover-background: #1e40af;
+  --button-text-color: white;
+  --sidebar-background: #e2e8f0;
+  --header-background: #e2e8f0;
+  --right-panel-background: #e2e8f0;
+  --error-color: #b91c1c;
+  --error-background: rgba(185, 28, 28, 0.1);
+  --success-color: #059669;
+  --success-background: rgba(5, 150, 105, 0.1);
+}
+
+/* High Contrast Mode */
+body.theme-high-contrast {
+  --background-color: black;
+  --text-color: white;
+  --primary-color: yellow;
+  --secondary-color: #333;
+  --border-color: white;
+  --card-background: #000000;
+  --input-background: #000000;
+  --input-border: white;
+  --placeholder-color: #ccc;
+  --button-background: white;
+  --button-hover-background: #ccc;
+  --button-text-color: black;
+  --sidebar-background: #000;
+  --header-background: #000;
+  --right-panel-background: #000;
+  --error-color: yellow;
+  --error-background: rgba(255, 255, 0, 0.2);
+  --success-color: lime;
+  --success-background: rgba(0, 255, 0, 0.2);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Basic Reset/Normalize */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Add Font Awesome for Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Remove default button styles */
+button {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Remove default input styles */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+} 

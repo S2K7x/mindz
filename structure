@@ -1,0 +1,30 @@
+/osint-lab-app/
+├── public/
+│   ├── index.html
+│   └── assets/
+│       ├── css/
+│       │   └── style.css
+│       └── images/
+│           └── favicon.ico
+├── src/
+│   ├── frontend/
+│   │   ├── components/
+│   │   │   ├── ToolCard.js
+│   │   │   ├── CategoryNav.js
+│   │   │   └── SearchBar.js
+│   │   ├── pages/
+│   │   │   └── HomePage.js
+│   │   ├── data/
+│   │   │   └── osintTools.json  // This will hold your tool data
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── backend/
+│   │   ├── server.js
+│   │   └── routes/
+│   │       └── api.js
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+└── config.js  // (Optional, for more complex global app configs)

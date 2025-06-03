@@ -1,0 +1,594 @@
+[
+  {
+    "category": "Email OSINT",
+    "tools": [
+      {
+        "name": "Have I Been Pwned",
+        "url": "https://haveibeenpwned.com",
+        "description": "Check if your email has been compromised in a data breach",
+        "templateUrl": "https://haveibeenpwned.com/account/{target}",
+        "embeddable": false,
+        "inputType": "email",
+        "pivotTags": ["username", "password_breach_context", "domain"]
+      },
+      {
+        "name": "Email Format",
+        "url": "https://www.email-format.com",
+        "description": "Find email address formats for different companies",
+        "templateUrl": "https://www.email-format.com/d/{target}",
+        "embeddable": false,
+        "inputType": "domain",
+        "pivotTags": ["email_pattern", "company_info"]
+      },
+      {
+        "name": "Hunter.io",
+        "url": "https://hunter.io",
+        "description": "Find and verify professional email addresses",
+        "templateUrl": "https://hunter.io/verify/{target}",
+        "embeddable": false,
+        "inputType": "email",
+        "pivotTags": ["domain", "company_info", "professional_contact"]
+      }
+    ]
+  },
+  {
+    "category": "Document & File Metadata OSINT",
+    "tools": [
+      {
+        "name": "FOCA",
+        "url": "https://www.elevenpaths.com/labstools/foca/index.html",
+        "description": "Extract metadata and hidden information from documents, images, and PDFs",
+        "templateUrl": "https://www.elevenpaths.com/labstools/foca/index.html?hash={target}",
+        "embeddable": false,
+        "inputType": "file_hash",
+        "pivotTags": ["metadata_extraction", "hidden_info", "document_analysis"]
+      },
+      {
+        "name": "Metadata2Go",
+        "url": "https://www.metadata2go.com",
+        "description": "Online metadata viewer for various file types including documents and images",
+        "templateUrl": "https://www.metadata2go.com/result?fileurl={target}",
+        "embeddable": true,
+        "inputType": "file_url",
+        "pivotTags": ["metadata_viewer", "file_analysis", "quick_check"]
+      },
+      {
+        "name": "Any.Run",
+        "url": "https://any.run",
+        "description": "Interactive malware analysis with public reports for file hashes",
+        "templateUrl": "https://any.run/malware-trends/{target}",
+        "embeddable": false,
+        "inputType": "file_hash",
+        "pivotTags": ["malware_analysis", "behavior_analysis", "threat_intel"]
+      },
+      {
+        "name": "Joe Sandbox",
+        "url": "https://www.joesandbox.com",
+        "description": "Advanced malware analysis with detailed reports for file hashes",
+        "templateUrl": "https://www.joesandbox.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "file_hash",
+        "pivotTags": ["malware_analysis", "detailed_reports", "threat_indicators"]
+      },
+      {
+        "name": "PDF Analyzer",
+        "url": "https://www.pdfanalyzer.com",
+        "description": "Deep analysis of PDF structure, hidden elements, and metadata",
+        "templateUrl": "https://www.pdfanalyzer.com/analyze?url={target}",
+        "embeddable": true,
+        "inputType": "pdf_url",
+        "pivotTags": ["pdf_analysis", "hidden_elements", "structure_analysis"]
+      },
+      {
+        "name": "ExifTool Online",
+        "url": "https://exiftool.org",
+        "description": "Comprehensive metadata extraction tool for various file formats",
+        "templateUrl": "https://exiftool.org/cgi-bin/exiftool?url={target}",
+        "embeddable": true,
+        "inputType": "file_url",
+        "pivotTags": ["metadata_extraction", "format_support", "detailed_analysis"]
+      }
+    ]
+  },
+  {
+    "category": "Geolocation & Mapping OSINT",
+    "tools": [
+      {
+        "name": "Google Maps",
+        "url": "https://www.google.com/maps",
+        "description": "Interactive mapping with street view, satellite imagery, and 3D views",
+        "templateUrl": "https://www.google.com/maps/search/?api=1&query={target}",
+        "embeddable": true,
+        "inputType": "geolocation",
+        "pivotTags": ["street_view", "satellite_imagery", "3d_view"]
+      },
+      {
+        "name": "Google Earth",
+        "url": "https://earth.google.com",
+        "description": "Advanced 3D mapping with historical imagery and terrain analysis",
+        "templateUrl": "https://earth.google.com/web/search/{target}",
+        "embeddable": false,
+        "inputType": "geolocation",
+        "pivotTags": ["historical_imagery", "3d_terrain", "time_lapse"]
+      },
+      {
+        "name": "OpenStreetMap",
+        "url": "https://www.openstreetmap.org",
+        "description": "Community-driven mapping with detailed local information",
+        "templateUrl": "https://www.openstreetmap.org/search?query={target}",
+        "embeddable": true,
+        "inputType": "geolocation",
+        "pivotTags": ["community_data", "local_info", "detailed_mapping"]
+      },
+      {
+        "name": "Mapillary",
+        "url": "https://www.mapillary.com",
+        "description": "Street-level imagery from multiple sources and time periods",
+        "templateUrl": "https://www.mapillary.com/app/?lat={lat}&lng={lng}&z=17",
+        "embeddable": true,
+        "inputType": "geolocation",
+        "pivotTags": ["street_level", "historical_views", "multiple_sources"]
+      },
+      {
+        "name": "Wikimapia",
+        "url": "https://wikimapia.org",
+        "description": "Collaborative mapping with detailed place descriptions and history",
+        "templateUrl": "https://wikimapia.org/#lat={lat}&lon={lng}&z=17",
+        "embeddable": true,
+        "inputType": "geolocation",
+        "pivotTags": ["place_info", "historical_data", "community_notes"]
+      },
+      {
+        "name": "SunCalc",
+        "url": "https://www.suncalc.org",
+        "description": "Calculate sun position, shadows, and golden/blue hours for any location and time",
+        "templateUrl": "https://www.suncalc.org/#/{lat},{lng},17/{date}/{time}",
+        "embeddable": true,
+        "inputType": "geolocation",
+        "pivotTags": ["sun_position", "shadow_analysis", "time_verification"]
+      }
+    ]
+  },
+  {
+    "category": "Image & Video OSINT",
+    "tools": [
+      {
+        "name": "Google Images",
+        "url": "https://images.google.com",
+        "description": "Reverse image search to find similar images and their sources",
+        "templateUrl": "https://images.google.com/searchbyimage?image_url={target}",
+        "embeddable": false,
+        "inputType": "image_url",
+        "pivotTags": ["reverse_search", "similar_images", "source_finding"]
+      },
+      {
+        "name": "TinEye",
+        "url": "https://tineye.com",
+        "description": "Specialized reverse image search engine with advanced features",
+        "templateUrl": "https://tineye.com/search?url={target}",
+        "embeddable": false,
+        "inputType": "image_url",
+        "pivotTags": ["reverse_search", "image_tracking", "usage_history"]
+      },
+      {
+        "name": "Jeffrey's Exif Viewer",
+        "url": "https://exif.regex.info",
+        "description": "Extract and analyze image metadata including GPS coordinates",
+        "templateUrl": "https://exif.regex.info/exif.cgi?url={target}",
+        "embeddable": true,
+        "inputType": "image_url",
+        "pivotTags": ["metadata", "gps_data", "camera_info"]
+      },
+      {
+        "name": "FotoForensics",
+        "url": "https://fotoforensics.com",
+        "description": "Analyze images for manipulation and extract hidden data",
+        "templateUrl": "https://fotoforensics.com/analysis.php?url={target}",
+        "embeddable": true,
+        "inputType": "image_url",
+        "pivotTags": ["manipulation_detection", "error_level_analysis", "metadata"]
+      },
+      {
+        "name": "PimEyes",
+        "url": "https://pimeyes.com",
+        "description": "Facial recognition search engine to find similar faces online",
+        "templateUrl": "https://pimeyes.com/en/search?q={target}",
+        "embeddable": false,
+        "inputType": "image_url",
+        "pivotTags": ["facial_recognition", "similar_faces", "online_presence"]
+      },
+      {
+        "name": "YouTube DataViewer",
+        "url": "https://citizenevidence.amnestyusa.org",
+        "description": "Extract metadata and thumbnails from YouTube videos",
+        "templateUrl": "https://citizenevidence.amnestyusa.org/?url={target}",
+        "embeddable": true,
+        "inputType": "youtube_url",
+        "pivotTags": ["video_metadata", "thumbnails", "timestamps"]
+      }
+    ]
+  },
+  {
+    "category": "Phone Number OSINT",
+    "tools": [
+      {
+        "name": "OSINT Industries PhoneIntel",
+        "url": "https://osint.industries/phoneintel",
+        "description": "Comprehensive phone number intelligence including carrier info, location data, and associated profiles",
+        "templateUrl": "https://osint.industries/phoneintel/{target}",
+        "embeddable": false,
+        "inputType": "phone",
+        "pivotTags": ["carrier_info", "location_data", "associated_profiles"]
+      },
+      {
+        "name": "Truecaller Web Search",
+        "url": "https://www.truecaller.com",
+        "description": "Search for phone numbers to find associated names and spam reports",
+        "templateUrl": "https://www.truecaller.com/search/{target}",
+        "embeddable": false,
+        "inputType": "phone",
+        "pivotTags": ["name_lookup", "spam_reports", "community_data"]
+      },
+      {
+        "name": "Phone Dork Generator",
+        "url": "https://phone-dork-generator.com",
+        "description": "Generate Google dorks to find phone numbers across social media and forums",
+        "templateUrl": "https://phone-dork-generator.com/generate?phone={target}",
+        "embeddable": false,
+        "inputType": "phone",
+        "pivotTags": ["google_dorks", "social_media", "forum_presence"]
+      }
+    ]
+  },
+  {
+    "category": "Social Media",
+    "tools": [
+      {
+        "name": "Social Searcher",
+        "url": "https://www.social-searcher.com",
+        "description": "Real-time social media search engine",
+        "templateUrl": "https://www.social-searcher.com/search-users/{target}",
+        "embeddable": false,
+        "inputType": "username",
+        "pivotTags": ["social_profiles", "online_presence", "content_analysis"]
+      },
+      {
+        "name": "Social Blade",
+        "url": "https://socialblade.com",
+        "description": "Track social media statistics and analytics",
+        "templateUrl": "https://socialblade.com/search/{target}",
+        "embeddable": false,
+        "inputType": "username",
+        "pivotTags": ["social_stats", "engagement_metrics", "growth_trends"]
+      },
+      {
+        "name": "TweetDeck",
+        "url": "https://tweetdeck.twitter.com",
+        "description": "Advanced Twitter search and monitoring",
+        "templateUrl": "https://tweetdeck.twitter.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "username",
+        "pivotTags": ["twitter_activity", "content_analysis", "network_analysis"]
+      }
+    ]
+  },
+  {
+    "category": "IP/Domain",
+    "tools": [
+      {
+        "name": "Shodan",
+        "url": "https://www.shodan.io",
+        "description": "Search engine for Internet-connected devices",
+        "templateUrl": "https://www.shodan.io/search?query={target}",
+        "embeddable": false,
+        "inputType": "ip",
+        "pivotTags": ["device_info", "vulnerabilities", "geolocation"]
+      },
+      {
+        "name": "VirusTotal",
+        "url": "https://www.virustotal.com",
+        "description": "Analyze suspicious files, domains, IPs and URLs",
+        "templateUrl": "https://www.virustotal.com/gui/search/{target}",
+        "embeddable": false,
+        "inputType": "domain",
+        "pivotTags": ["threat_intel", "malware_analysis", "network_activity"]
+      },
+      {
+        "name": "Whois",
+        "url": "https://whois.domaintools.com",
+        "description": "Domain WHOIS lookup and registration information",
+        "templateUrl": "https://whois.domaintools.com/{target}",
+        "embeddable": false,
+        "inputType": "domain",
+        "pivotTags": ["registrant_info", "dns_records", "registration_history"]
+      }
+    ]
+  },
+  {
+    "category": "Dark Web / Leaks / Breaches",
+    "tools": [
+      {
+        "name": "Ahmia",
+        "url": "https://ahmia.fi",
+        "description": "Search engine for .onion sites with verified links and content filtering",
+        "templateUrl": "https://ahmia.fi/search/?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["dark_web", "onion_sites", "verified_links"]
+      },
+      {
+        "name": "DarkSearch.io",
+        "url": "https://darksearch.io",
+        "description": "Advanced dark web search engine with real-time indexing",
+        "templateUrl": "https://darksearch.io/search?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["dark_web", "real_time", "advanced_search"]
+      },
+      {
+        "name": "Pastebin Search",
+        "url": "https://psbdmp.ws",
+        "description": "Search through Pastebin dumps for leaked information",
+        "templateUrl": "https://psbdmp.ws/search/{target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["paste_sites", "leaked_data", "text_search"]
+      },
+      {
+        "name": "Hastebin Search",
+        "url": "https://hastebin.com",
+        "description": "Search through Hastebin pastes for relevant information",
+        "templateUrl": "https://hastebin.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["paste_sites", "code_snippets", "text_search"]
+      },
+      {
+        "name": "Exploit-DB",
+        "url": "https://www.exploit-db.com",
+        "description": "Database of exploits and vulnerabilities with search functionality",
+        "templateUrl": "https://www.exploit-db.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["exploits", "vulnerabilities", "security_research"]
+      },
+      {
+        "name": "Leak-Lookup",
+        "url": "https://leak-lookup.com",
+        "description": "Search through multiple data breaches and leaks",
+        "templateUrl": "https://leak-lookup.com/search?email={target}",
+        "embeddable": false,
+        "inputType": "email",
+        "pivotTags": ["data_breaches", "leaked_data", "email_search"]
+      },
+      {
+        "name": "DeHashed",
+        "url": "https://dehashed.com",
+        "description": "Comprehensive database of leaked credentials and personal information",
+        "templateUrl": "https://dehashed.com/search?query={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["credentials", "personal_info", "breach_data"]
+      }
+    ]
+  },
+  {
+    "category": "Cryptocurrency OSINT",
+    "tools": [
+      {
+        "name": "Etherscan",
+        "url": "https://etherscan.io",
+        "description": "Ethereum blockchain explorer for tracing transactions and analyzing wallet addresses",
+        "templateUrl": "https://etherscan.io/address/{target}",
+        "embeddable": false,
+        "inputType": "eth_address",
+        "pivotTags": ["ethereum", "transaction_history", "wallet_analysis"]
+      },
+      {
+        "name": "Blockchain.com Explorer",
+        "url": "https://www.blockchain.com/explorer",
+        "description": "Bitcoin blockchain explorer for tracking transactions and wallet activity",
+        "templateUrl": "https://www.blockchain.com/explorer/addresses/{target}",
+        "embeddable": false,
+        "inputType": "btc_address",
+        "pivotTags": ["bitcoin", "transaction_history", "wallet_analysis"]
+      },
+      {
+        "name": "BTCScan",
+        "url": "https://btcscan.org",
+        "description": "Advanced Bitcoin blockchain explorer with detailed transaction analysis",
+        "templateUrl": "https://btcscan.org/address/{target}",
+        "embeddable": false,
+        "inputType": "btc_address",
+        "pivotTags": ["bitcoin", "advanced_analysis", "transaction_patterns"]
+      },
+      {
+        "name": "Whale Alert",
+        "url": "https://whale-alert.io",
+        "description": "Track large cryptocurrency transactions across multiple blockchains",
+        "templateUrl": "https://whale-alert.io/transaction/{target}",
+        "embeddable": false,
+        "inputType": "tx_hash",
+        "pivotTags": ["large_transactions", "multi_chain", "real_time_tracking"]
+      },
+      {
+        "name": "OXT.me",
+        "url": "https://oxt.me",
+        "description": "Advanced Bitcoin blockchain analysis platform with clustering capabilities",
+        "templateUrl": "https://oxt.me/address/{target}",
+        "embeddable": false,
+        "inputType": "btc_address",
+        "pivotTags": ["address_clustering", "entity_analysis", "advanced_metrics"]
+      },
+      {
+        "name": "CipherTrace",
+        "url": "https://ciphertrace.com",
+        "description": "Enterprise-grade blockchain analysis platform for compliance and investigation",
+        "templateUrl": "https://ciphertrace.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "crypto_address",
+        "pivotTags": ["compliance", "risk_assessment", "entity_tracking"]
+      }
+    ]
+  },
+  {
+    "category": "Browser Search",
+    "description": "Multi-engine search capabilities for comprehensive web reconnaissance",
+    "tools": [
+      {
+        "name": "Google Search",
+        "url": "https://www.google.com/",
+        "description": "Perform a standard Google search for the target.",
+        "templateUrl": "https://www.google.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["web_search", "general_search", "quick_lookup"]
+      },
+      {
+        "name": "Bing Search",
+        "url": "https://www.bing.com/",
+        "description": "Perform a standard Bing search for the target.",
+        "templateUrl": "https://www.bing.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["web_search", "general_search", "quick_lookup"]
+      },
+      {
+        "name": "DuckDuckGo Search",
+        "url": "https://duckduckgo.com/",
+        "description": "Perform a privacy-focused search with DuckDuckGo for the target.",
+        "templateUrl": "https://duckduckgo.com/?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["web_search", "privacy_focused", "quick_lookup"]
+      },
+      {
+        "name": "Yandex Search",
+        "url": "https://yandex.com/",
+        "description": "Perform a Yandex search, useful for non-Western content.",
+        "templateUrl": "https://yandex.com/search/?text={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["web_search", "non_western", "quick_lookup"]
+      },
+      {
+        "name": "Brave Search",
+        "url": "https://search.brave.com/",
+        "description": "Perform a Brave Search, independent search index.",
+        "templateUrl": "https://search.brave.com/search?q={target}",
+        "embeddable": false,
+        "inputType": "text",
+        "pivotTags": ["web_search", "independent_index", "quick_lookup"]
+      },
+      {
+        "name": "Archive.org (Wayback Machine)",
+        "url": "https://archive.org/web/",
+        "description": "Search historical versions of websites or content.",
+        "templateUrl": "https://web.archive.org/web/*/{target}",
+        "embeddable": false,
+        "inputType": "url",
+        "pivotTags": ["historical_data", "web_archive", "content_history"]
+      }
+    ]
+  },
+  {
+    "category": "Social Media Search",
+    "tools": [
+      {
+        "name": "Facebook Profile Search",
+        "url": "https://www.facebook.com/public/",
+        "description": "Search for profiles on Facebook. Note: May require login or specific URL patterns.",
+        "templateUrl": "https://www.facebook.com/public/{target}",
+        "embeddable": false,
+        "inputType": ["text", "username", "name"],
+        "pivotTags": ["profile"]
+      },
+      {
+        "name": "X (Twitter) Profile Search",
+        "url": "https://x.com/search",
+        "description": "Search for users or tweets on X (Twitter).",
+        "templateUrl": "https://x.com/search?q={target}&src=typed_query&f=user",
+        "embeddable": false,
+        "inputType": ["text", "username"],
+        "pivotTags": ["profile"]
+      },
+      {
+        "name": "LinkedIn People Search",
+        "url": "https://www.linkedin.com/search/results/people/",
+        "description": "Search for individuals on LinkedIn.",
+        "templateUrl": "https://www.linkedin.com/search/results/people/?keywords={target}",
+        "embeddable": false,
+        "inputType": ["text", "username", "name"],
+        "pivotTags": ["profile"]
+      },
+      {
+        "name": "Instagram Profile Search",
+        "url": "https://www.instagram.com/",
+        "description": "Attempt to find an Instagram profile by username. Requires direct username in URL.",
+        "templateUrl": "https://www.instagram.com/{target}/",
+        "embeddable": false,
+        "inputType": ["text", "username"],
+        "pivotTags": ["profile"]
+      },
+      {
+        "name": "Reddit User Search",
+        "url": "https://www.reddit.com/search/",
+        "description": "Search for users or subreddits on Reddit.",
+        "templateUrl": "https://www.reddit.com/search/?q=author%3A{target}&type=user",
+        "embeddable": false,
+        "inputType": ["text", "username"],
+        "pivotTags": ["profile"]
+      },
+      {
+        "name": "TikTok Profile Search",
+        "url": "https://www.tiktok.com/search/",
+        "description": "Search for users or content on TikTok.",
+        "templateUrl": "https://www.tiktok.com/search?q={target}&t=1678886400000&share_filter_mode=user",
+        "embeddable": false,
+        "inputType": ["text", "username"],
+        "pivotTags": ["profile"]
+      },
+      {
+        "name": "YouTube Channel Search",
+        "url": "https://www.youtube.com/results?search_query=",
+        "description": "Search for channels or videos on YouTube.",
+        "templateUrl": "https://www.youtube.com/results?search_query={target}&sp=EgIQAg%253D%253D",
+        "embeddable": false,
+        "inputType": ["text", "username", "name"],
+        "pivotTags": ["channel", "profile"]
+      }
+    ]
+  },
+  {
+    "category": "Dorking Lab",
+    "description": "Generate complex search queries for various platforms.",
+    "tools": [
+      {
+        "name": "Dorking Query Generator",
+        "description": "Interface to build advanced search engine dorks.",
+        "isInternal": true
+      }
+    ]
+  },
+  {
+    "category": "Web Archives",
+    "description": "Tools for exploring historical versions of websites.",
+    "icon": "fas fa-archive",
+    "tools": [
+      {
+        "name": "Archive.org & Google Cache Explorer",
+        "description": "Check a domain/URL's presence in the Wayback Machine and Google's cache.",
+        "templateUrl": "https://web.archive.org/web/*/{target}",
+        "additionalUrls": [
+          {
+            "name": "Google Cache",
+            "templateUrl": "https://webcache.googleusercontent.com/search?q=cache:{target}"
+          }
+        ],
+        "inputType": ["domain", "url"],
+        "pivotTags": ["historical data", "web snapshots"],
+        "embeddable": false
+      }
+    ]
+  }
+] 
