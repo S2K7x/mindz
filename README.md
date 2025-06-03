@@ -1,4 +1,4 @@
-# OSINT Lab
+# Mindz
 
 A modern web application for OSINT practitioners, featuring a dark mode interface and comprehensive tool integration.
 
